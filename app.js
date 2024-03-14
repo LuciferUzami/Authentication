@@ -18,10 +18,14 @@ mongoose.connect("mongodb://localhost:27017/userDB")
 const userSchema = new mongoose.Schema({
     email :{
         type: String,
+        required: true,
+        trim: true
         
     },
     password :{
-        type: String
+        type: String,
+        required: true,
+        trim: true
     }
 })
 // Plugin
@@ -51,6 +55,8 @@ app.route("/login")
         }else{
             res.send("Password incorrect")
         }
+    }).catch(() =>{
+        res.send("Invalid email")
     })
 })
 
@@ -70,9 +76,16 @@ app.route("/register")
 
     data.save().then(() =>{
         res.render("secrets")
+    }).catch(() =>{
+        res.send("Full all the field")
     })
 })
 
+// logout
+app.route("/logout")
+.get(function(req, res){
+    res.render("home")
+})
 
 app.listen(3000, function(){
     console.log("Servier has been connected")
