@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional IDE files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables file
+.env
+.env.local
+
+# Build files
+build/
+dist/
+out/
+coverage/
+
+# Compiled files
+*.pid
+*.seed
+*.pid.lock
+
+# npm package-lock.json file
+package-lock.json
+
+# Yarn lock file
+yarn.lock
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
